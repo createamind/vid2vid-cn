@@ -1,0 +1,30 @@
+# base_options 通用选项
+
+- `dataroot` 图片数据位置，应该有一些子文件夹，包括 trainA, trainB, valA, valB, 等等
+- `batchSize` 每一个batch中图片数据的数量
+- `loadSize` 把图片缩放到这个尺寸
+- `fineSize` 把图片裁剪到这个尺寸
+- `input_nc` 输入图片的通道数
+- `output_nc` 输出图片的通道数
+- `ngf` 生成器第一个卷积层有多少个卷积核
+- `ndf` 判别器第一个卷积层有多少个卷积核
+- `which_model_netD` 判别器网络选用那个模型
+- `which_model_netG` 生成器网络选用哪个模型
+- `n_layers_D`  只在 which_model_netD==n_layers 条件下使用
+- `gpu_ids` 使用哪几个gpu 比如0  0,1,2, 0,2。如果是使用CPU 就是 -1 
+- `name` 本实验的名字，用来给模型和生成的样本命名
+- `dataset_mode` 选择数据集加载的模式，有[unaligned | aligned | single | v]四种可选
+- `model`  总体上选择哪种模型 有 cycle_gan, pix2pix, test 三种可选
+- `which_direction` cycleGan选择哪个方向，默认是AtoB, 有 AtoB 和BtoA 可选
+- `nThreads` 加载数据集的线程数
+- `checkpoints_dir` 检查点文件的保存位置
+- `norm`  install 标准化 还是 批标准化
+- `serial_batches`  是否按照数据集原本的顺序获取一个批次的数据，如果是False就是随机获取数据
+- `display_winsize`  展示图片的窗口的大小
+- `display_id` 展示图片的窗口的id
+- `display_port` 本地服务器运行在哪个端口上
+- `no_dropout` 生成器不使用 dropout
+- `max_dataset_size` 每个数据集允许载入的最大样本数量
+- `resize_or_crop` 图片的处理模式，有[resize_and_crop|crop|scale_width|scale_width_and_crop] 可选
+- `no_flip`  是否要使用图像翻转对数据进行扩充
+- `init_type`  网络参数初始化的方法 有 [normal|xavier|kaiming|orthogonal] 可选
